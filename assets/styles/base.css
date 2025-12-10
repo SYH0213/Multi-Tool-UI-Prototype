@@ -1,0 +1,79 @@
+:root {
+  color-scheme: light;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --color-bg: hsl(220, 23%, 97%);
+  --color-surface: hsla(0, 0%, 100%, 0.9);
+  --color-border: hsla(220, 16%, 80%, 0.6);
+  --color-text: hsl(222, 36%, 16%);
+  --color-muted: hsl(221, 15%, 50%);
+  --color-primary: hsl(256, 71%, 60%);
+  --color-primary-soft: hsla(256, 72%, 60%, 0.16);
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.12);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+  --glass-blur: 12px;
+  --sidebar-width: 220px;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: hsl(222, 30%, 7%);
+  --color-surface: hsla(222, 24%, 18%, 0.8);
+  --color-border: hsla(220, 13%, 30%, 0.6);
+  --color-text: hsl(210, 40%, 92%);
+  --color-muted: hsl(218, 14%, 70%);
+  --color-primary: hsl(258, 83%, 70%);
+  --color-primary-soft: hsla(258, 83%, 70%, 0.22);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: radial-gradient(circle at top, hsla(256, 72%, 85%, 0.25), transparent), var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}

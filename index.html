@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yonghun Tools v0.1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/base.css" />
+    <link rel="stylesheet" href="assets/styles/layout.css" />
+    <link rel="stylesheet" href="assets/styles/modules.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-icon">⚡</span>
+          <div>
+            <p class="brand-name">Yonghun Tools</p>
+            <p class="brand-version">UI Prototype</p>
+          </div>
+        </div>
+        <nav class="nav">
+          <button class="nav-link is-active" data-section="dashboard">
+            <i class="icon" aria-hidden="true"></i>
+            <span>Dashboard</span>
+          </button>
+          <button class="nav-link" data-section="ai-chat">
+            <i class="icon" aria-hidden="true"></i>
+            <span>AI Chat</span>
+          </button>
+          <button class="nav-link" data-section="memo">
+            <i class="icon" aria-hidden="true"></i>
+            <span>Memo</span>
+          </button>
+          <button class="nav-link" data-section="mini-game">
+            <i class="icon" aria-hidden="true"></i>
+            <span>Mini Game</span>
+          </button>
+          <button class="nav-link" data-section="files">
+            <i class="icon" aria-hidden="true"></i>
+            <span>Files</span>
+          </button>
+          <button class="nav-link" data-section="settings">
+            <i class="icon" aria-hidden="true"></i>
+            <span>Settings</span>
+          </button>
+        </nav>
+        <button class="add-tool">+ Add Tool</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div class="search">
+            <input type="search" placeholder="Search tools, notes, files" />
+          </div>
+          <div class="topbar-actions">
+            <button class="icon-btn" title="Notifications">
+              <span>🔔</span>
+            </button>
+            <button class="icon-btn" id="themeToggle" title="Toggle theme">
+              <span>🌓</span>
+            </button>
+            <div class="profile">
+              <div class="avatar">YH</div>
+              <div>
+                <p class="profile-name">Yonghun</p>
+                <p class="profile-role">Prototype Maker</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <section class="content">
+          <article class="panel is-visible" id="dashboard">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Overview</p>
+                <h1>Multi-Tool Dashboard</h1>
+              </div>
+              <button class="pill">Generate report</button>
+            </header>
+            <div class="grid dashboard-grid">
+              <div class="card progress">
+                <p>Weekly Progress</p>
+                <div class="progress-value">72%</div>
+                <div class="progress-bar">
+                  <span style="width: 72%"></span>
+                </div>
+                <small>+18% vs last week</small>
+              </div>
+              <div class="card tasks">
+                <p>Active Modules</p>
+                <ul>
+                  <li>AI Chat redesign</li>
+                  <li>Memo syncing</li>
+                  <li>Mini game hub</li>
+                </ul>
+              </div>
+              <div class="card chart">
+                <p>Usage Snapshot</p>
+                <div class="chart-placeholder">Chart placeholder</div>
+              </div>
+              <div class="card timeline">
+                <p>Upcoming</p>
+                <ol>
+                  <li>Theme polish – Today</li>
+                  <li>Mini game mock – Tomorrow</li>
+                  <li>Portfolio deploy – Friday</li>
+                </ol>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel" id="ai-chat">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Conversational UI</p>
+                <h1>AI Chat Studio</h1>
+              </div>
+              <div class="panel-actions">
+                <label class="select">
+                  <span>Model</span>
+                  <select>
+                    <option>GPT-4</option>
+                    <option>GPT-4o</option>
+                    <option>Custom</option>
+                  </select>
+                </label>
+                <button class="pill">New preset</button>
+              </div>
+            </header>
+            <div class="chat-layout">
+              <aside class="chat-presets">
+                <h2>Presets</h2>
+                <ul>
+                  <li class="is-active">Research buddy</li>
+                  <li>Idea exploder</li>
+                  <li>Summarizer</li>
+                  <li>Debug coach</li>
+                </ul>
+              </aside>
+              <div class="chat-window">
+                <div class="chat-log" id="chatLog"></div>
+                <div class="chat-input">
+                  <textarea placeholder="Type a prompt..." rows="2"></textarea>
+                  <div class="chat-tools">
+                    <button class="pill ghost">+ Attachment</button>
+                    <button class="pill">Send</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel" id="memo">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Notes</p>
+                <h1>Memo Vault</h1>
+              </div>
+              <div class="panel-actions">
+                <button class="pill ghost">Filter</button>
+                <button class="pill">New memo</button>
+              </div>
+            </header>
+            <div class="memo-grid" id="memoGrid"></div>
+          </article>
+
+          <article class="panel" id="mini-game">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Playground</p>
+                <h1>Mini Game Hub</h1>
+              </div>
+              <button class="pill">Launch studio</button>
+            </header>
+            <div class="game-layout">
+              <div class="game-list" id="gameList"></div>
+              <div class="game-preview">
+                <h2>Preview</h2>
+                <p>Select a game to see mock UI and quick stats.</p>
+                <div class="preview-card">
+                  <div class="preview-graphic">🎮</div>
+                  <p class="preview-title">No game selected</p>
+                  <p class="preview-meta">Pick one from the list</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel" id="files">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Storage</p>
+                <h1>File Organizer</h1>
+              </div>
+              <div class="panel-actions">
+                <button class="pill ghost">Sort</button>
+                <button class="pill">Upload</button>
+              </div>
+            </header>
+            <div class="files-layout">
+              <div class="dropzone">
+                <p>Drag & drop files</p>
+                <small>Supports images, docs, prototypes</small>
+              </div>
+              <div class="file-list" id="fileList"></div>
+            </div>
+          </article>
+
+          <article class="panel" id="settings">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Controls</p>
+                <h1>Settings</h1>
+              </div>
+            </header>
+            <div class="settings-grid">
+              <section class="card">
+                <h2>Profile</h2>
+                <label>
+                  <span>Name</span>
+                  <input type="text" placeholder="Yonghun" />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="email" placeholder="yo@example.com" />
+                </label>
+                <button class="pill">Update</button>
+              </section>
+              <section class="card">
+                <h2>Notifications</h2>
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span>Product updates</span>
+                </label>
+                <label class="toggle">
+                  <input type="checkbox" />
+                  <span>AI summaries</span>
+                </label>
+                <label class="toggle">
+                  <input type="checkbox" checked />
+                  <span>Weekly digest</span>
+                </label>
+              </section>
+              <section class="card">
+                <h2>Theme</h2>
+                <p>Experiment with palettes, glass levels, and typography systems.</p>
+                <div class="theme-options">
+                  <button class="pill ghost" data-theme-option="light">Light</button>
+                  <button class="pill ghost" data-theme-option="dark">Dark</button>
+                  <button class="pill ghost" data-theme-option="system">Auto</button>
+                </div>
+              </section>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="assets/scripts/app.js"></script>
+  </body>
+</html>
