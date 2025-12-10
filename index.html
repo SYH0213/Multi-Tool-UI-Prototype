@@ -25,7 +25,11 @@
           </div>
         </div>
         <nav class="nav">
-          <button class="nav-link is-active" data-section="dashboard">
+          <button class="nav-link is-active" data-section="rps">
+            <i class="icon" aria-hidden="true"></i>
+            <span>Rock · Paper · Scissors</span>
+          </button>
+          <button class="nav-link" data-section="dashboard">
             <i class="icon" aria-hidden="true"></i>
             <span>Dashboard</span>
           </button>
@@ -76,7 +80,50 @@
         </header>
 
         <section class="content">
-          <article class="panel is-visible" id="dashboard">
+          <article class="panel is-visible rps-panel" id="rps">
+            <header class="panel-header">
+              <div>
+                <p class="eyebrow">Mini Game</p>
+                <h1>Rock · Paper · Scissors</h1>
+              </div>
+              <button class="pill" id="rpsStart">가위바위보 시작!</button>
+            </header>
+            <p class="rps-intro">
+              버튼을 눌러 애니메이션을 시작하고 가위·바위·보 중 하나를 선택해 승부를 겨뤄보세요.
+            </p>
+            <div class="rps-grid">
+              <div class="rps-display" id="rpsDisplay">
+                <span class="rps-emoji">✊</span>
+                <p class="rps-label">Ready?</p>
+              </div>
+              <div class="rps-side">
+                <p class="rps-countdown" id="rpsCountdown">준비되면 시작 버튼을 눌러주세요.</p>
+                <div class="rps-result" id="rpsResult" aria-live="polite">
+                  <p class="rps-status" id="rpsStatusText">게임을 시작하세요.</p>
+                  <div class="rps-outcome">
+                    <span class="player-choice" id="rpsPlayerChoice">You —</span>
+                    <span class="computer-choice" id="rpsComputerChoice">Computer —</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="rps-choices" id="rpsChoices">
+              <button class="rps-btn" data-choice="rock" aria-label="바위 선택">
+                <span class="emoji">✊</span>
+                <span class="label">바위</span>
+              </button>
+              <button class="rps-btn" data-choice="paper" aria-label="보 선택">
+                <span class="emoji">✋</span>
+                <span class="label">보</span>
+              </button>
+              <button class="rps-btn" data-choice="scissors" aria-label="가위 선택">
+                <span class="emoji">✌️</span>
+                <span class="label">가위</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="panel" id="dashboard">
             <header class="panel-header">
               <div>
                 <p class="eyebrow">Overview</p>

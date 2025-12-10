@@ -8,6 +8,9 @@
   --color-muted: hsl(221, 15%, 50%);
   --color-primary: hsl(256, 71%, 60%);
   --color-primary-soft: hsla(256, 72%, 60%, 0.16);
+  --color-success: hsl(141, 73%, 45%);
+  --color-danger: hsl(0, 78%, 62%);
+  --color-info: hsl(210, 80%, 50%);
   --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.12);
   --radius-lg: 24px;
   --radius-md: 16px;
@@ -25,6 +28,9 @@
   --color-muted: hsl(218, 14%, 70%);
   --color-primary: hsl(258, 83%, 70%);
   --color-primary-soft: hsla(258, 83%, 70%, 0.22);
+  --color-success: hsl(141, 60%, 50%);
+  --color-danger: hsl(0, 70%, 60%);
+  --color-info: hsl(210, 70%, 60%);
   --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
